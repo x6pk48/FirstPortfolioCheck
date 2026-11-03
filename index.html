@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Build your CV site: Learn, Do, Test, Correct</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrap">
+<nav class="side" aria-label="Workbook steps">
+<strong>CV workbook</strong>
+<div class="bar" role="progressbar" aria-label="Tasks completed" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><i></i></div>
+<p class="pct" id="pct">0 tasks done</p>
+<ol id="navList">
+<li><a href="#s1">1 Folders</a></li>
+<li><a href="#s2">2 Skeleton</a></li>
+<li><a href="#s3">3 Structure</a></li>
+<li><a href="#s4">4 Text &amp; links</a></li>
+<li><a href="#s5">5 Images</a></li>
+<li><a href="#s6">6 Table</a></li>
+<li><a href="#s7">7 CSS basics</a></li>
+<li><a href="#s8">8 Contextual CSS</a></li>
+<li><a href="#s9">9 Effects &amp; responsive</a></li>
+<li><a href="#s10">10 Commentary</a></li>
+<li><a href="#deploy">Deploy to UCL</a></li>
+<li><a href="#lab">Final check</a></li>
+</ol>
+</nav>
+
+<main>
+<header>
+<h1>Build your CV site, one decision at a time</h1>
+<p class="lead">Every step follows the same rhythm: <strong>Learn</strong> the idea, <strong>Do</strong> the task, <strong>Test</strong> your work, then <strong>Correct</strong> anything that failed.</p>
+<p><strong>How to use it:</strong> read the Learn section, tick the Do tasks as you type your own version, press <em>Test this step</em> to check, then use the Correct panel to fix what failed. Open <strong>my project</strong> at the bottom of the screen to type your files, see a live preview, and run every check. Your ticks and code are saved in this browser.</p>
+<p><strong>Note:</strong> The worked examples use “Your Name” and “Your University” as placeholders. Replace these with your own details, but never put sensitive personal information (full address, phone number, date of birth) in a public CV site.</p>
+</header>
+
+<section class="step" id="s1">
+<h2><span>1</span>Create your folders</h2>
+<div class="learn">
+<h3>Learn</h3>
+<p>A predictable structure means your HTML can always find your CSS and images. A broken path is the most common reason a site appears unstyled.</p>
+<script type="text/plain" class="code" data-file="folder structure">
+cv-site/
+├── index.html
+├── static/
+│   ├── styles.css
+│   └── script.js
+└── images/
+    └── profile.jpg
+</script>
+<ul>
+<li><strong>Lowercase filenames, no spaces.</strong> The UCL server is case-sensitive, Windows is not. <code>Profile.JPG</code> works on your laptop and 404s online.</li>
+<li><strong>Relative paths only:</strong> <code>static/styles.css</code>, never <code>C:\Users\you\...</code>.</li>
+<li><strong>Your <code>href</code> must match the real folder.</strong> Accepted paths: <code>css/style.css</code>, <code>static/style.css</code>, <code>static/styles.css</code>, or <code>styles.css</code>.</li>
+</ul>
+</div>
+<div class="do"><h3>Do</h3>
+<label><input type="checkbox"> Make a folder called <code>cv-site</code> and inside it create <code>index.html</code>, a <code>static</code> folder containing <code>styles.css</code> and <code>script.js</code>, and an <code>images</code> folder.</label>
+<label><input type="checkbox"> Put one photo in <code>images</code>. Name it in lowercase with no spaces.</label>
+<label><input type="checkbox"> Open <code>index.html</code> in your editor and leave it empty for now.</label>
+<label><input type="checkbox"> Add this to the top of <code>styles.css</code> and finish the sentence: <code>/* File structure: I used a static/ folder because ___ */</code></label>
+</div>
+<div class="test"><h3>Test</h3>
+<p>Edit your files in the project panel, then press the button.</p>
+<button class="go" type="button" data-step="1">Test this step</button>
+<p class="sum" role="status"></p><ul class="res"></ul>
+</div>
+<div class="correct"><h3>Correct</h3>
+<p class="correctMsg">Run the test first. Failed items and the exact fix will appear here.</p>
+</div>
+</section>
+
+<section class="step" id="s2">
+<h2><span>2</span>Write the HTML skeleton</h2>
+<div class="learn">
+<h3>Learn</h3>
+<p>Every page needs the same bones. The <code>lang</code> attribute lets screen readers pick the right voice, and the viewport tag is what makes media queries work on phones.</p>
+<script type="text/plain" class="code" data-file="index.html (fill the blanks)">
+<!DOCTYPE ___>
+<html lang="___">
+<head>
+  <meta charset="___">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>___</title>
+  <link rel="___" href="___">
+  <script src="static/script.js" defer></script>
+</head>
+<body>
+</body>
+</html>
+</script>
+<details><summary>Worked answer</summary>
+<script type="text/plain" class="code" data-file="index.html">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your Name | CV</title>
+  <link rel="stylesheet" href="static/styles.css">
+  <script src="static/script.js" defer></script>
+</head>
+<body>
+</body>
+</html>
+</script></details>
+</div>
+<div class="do"><h3>Do</h3>
+<label><input type="checkbox"> Type the skeleton and fill every blank from memory.</label>
+<label><input type="checkbox"> Save, then open the file in a browser. The tab title should show your <code>&lt;title&gt;</code>.</label>
+<label><input type="checkbox"> Change the body background in <code>styles.css</code>. If nothing changes, the link path is wrong.</label>
+</div>
+<div class="test"><h3>Test</h3>
+<button class="go" type="button" data-step="2">Test this step</button>
+<p class="sum" role="status"></p><ul class="res"></ul>
+</div>
+<div class="correct"><h3>Correct</h3>
+<p class="correctMsg">Run the test first. Failed items and the exact fix will appear here.</p>
+</div>
+</section>
+
+<section class="step" id="s3">
+<h2><span>3</span>Structure with semantic HTML</h2>
+<div class="learn">
+<h3>Learn</h3>
+<p>A <code>&lt;div&gt;</code> says nothing; <code>&lt;nav&gt;</code> or <code>&lt;main&gt;</code> tells browsers, search engines and screen-reader users what each region is. Semantic tags also give you meaningful hooks for contextual CSS later.</p>
+<script type="text/plain" class="code" data-file="index.html (inside body)">
+<header>
+  <h1>Your Name</h1>
+  <p>Degree student, Your City</p>
+</header>
+<nav aria-label="Main">
+  <ul>
+    <li><a href="#profile">Profile</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#skills">Skills</a></li>
+  </ul>
+</nav>
+<main>
+  <section id="profile"><h2>Profile</h2><p>...</p></section>
+  <section id="education"><h2>Education</h2></section>
+  <section id="skills"><h2>Skills</h2></section>
+</main>
+<footer><p>&copy; 2026 Your Name</p></footer>
+</script>
+<p><strong>Common mistake:</strong> choosing a heading because of its size. Heading levels describe outline, not looks. Change size in CSS.</p>
+</div>
+<div class="do"><h3>Do</h3>
+<label><input type="checkbox"> Inside <code>&lt;body&gt;</code> write a <code>&lt;header&gt;</code> with your name as the one and only <code>&lt;h1&gt;</code>, followed by a <code>&lt;nav&gt;</code>.</label>
+<label><input type="checkbox"> Add a <code>&lt;main&gt;</code> with one <code>&lt;section&gt;</code> per CV part, each with an <code>id</code> and an <code>&lt;h2&gt;</code>. End with a <code>&lt;footer&gt;</code>.</label>
+<label><input type="checkbox"> Make nav links jump to your sections using <code>href="#id"</code>.</label>
+</div>
+<div class="test"><h3>Test</h3>
+<button class="go" type="button" data-step="3">Test this step</button>
+<p class="sum" role="status"></p><ul class="res"></ul>
+</div>
+<div class="correct"><h3>Correct</h3>
+<p class="correctMsg">Run the test first. Failed items and the exact fix will appear here.</p>
+</div>
+</section>
+
+<section class="step" id="s4">
+<h2><span>4</span>Format text for meaning, and add links</h2>
+<div class="learn">
+<h3>Learn</h3>
+<p>Bold and italic tags exist in two flavours: ones that carry meaning and ones that only change looks. Choosing the meaningful one helps screen readers and makes your commentary much stronger.</p>
+<div class="scroll"><table>
+<caption>Which tag should I use?</caption>
+<thead><tr><th scope="col">Tag</th><th scope="col">Meaning</th><th scope="col">Use it for</th></tr></thead>
+<tbody>
+<tr><th scope="row"><code>&lt;strong&gt;</code></th><td>Importance or urgency</td><td>A key achievement or warning</td></tr>
+<tr><th scope="row"><code>&lt;em&gt;</code></th><td>Stressed emphasis</td><td>“I <em>led</em> the project”</td></tr>
+<tr><th scope="row"><code>&lt;b&gt;</code></th><td>None, just draws attention</td><td>Rarely needed. Use CSS</td></tr>
+<tr><th scope="row"><code>&lt;i&gt;</code></th><td>None, alternate voice or term</td><td>A foreign word or technical term</td></tr>
+</tbody></table></div>
+<script type="text/plain" class="code" data-file="index.html">
+<p>I <em>built</em> a booking system used by <strong>200 students</strong>.</p>
+<a href="https://www.example.ac.uk/" target="_blank" rel="noopener">Your University</a>
+<address><a href="mailto:your.email@example.com">your.email@example.com</a></address>
+</script>
+</div>
+<div class="do"><h3>Do</h3>
+<label><input type="checkbox"> Write your profile paragraph. Use <code>&lt;strong&gt;</code> once and <code>&lt;em&gt;</code> once, each for a reason you can state.</label>
+<label><input type="checkbox"> Add an <code>&lt;address&gt;</code> in the footer with a <code>mailto:</code> link.</label>
+<label><input type="checkbox"> Add one external link to your university with <code>target="_blank"</code> and <code>rel="noopener"</code>.</label>
+</div>
+<div class="test"><h3>Test</h3>
+<button class="go" type="button" data-step="4">Test this step</button>
+<p class="sum" role="status"></p><ul class="res"></ul>
+</div>
+<div class="correct"><h3>Correct</h3>
+<p class="correctMsg">Run the test first. Failed items and the exact fix will appear here.</p>
+</div>
+</section>
+
+<section class="step" id="s5">
+<h2><span>5</span>Add images correctly</h2>
+<div class="learn">
+<h3>Learn</h3>
+<p>An image needs four things to work well: the right relative path, descriptive <code>alt</code> text, <code>width</code> and <code>height</code> so the page does not jump while loading, and a CSS rule so it never overflows on a phone.</p>
+<div class="scroll"><table>
+<caption>Image checklist</caption>
+<thead><tr><th scope="col">Attribute</th><th scope="col">Why it matters</th></tr></thead>
+<tbody>
+<tr><th scope="row"><code>src</code></th><td>Relative path into <code>images/</code>. Lowercase, no spaces.</td></tr>
+<tr><th scope="row"><code>alt</code></th><td>Describes the image's purpose for screen-reader users. Never leave empty unless the image is purely decorative.</td></tr>
+<tr><th scope="row"><code>width</code> and <code>height</code></th><td>Reserve space so the layout does not shift while the image loads.</td></tr>
+<tr><th scope="row">CSS <code>max-width: 100%</code></th><td>Stops large images overflowing on small screens.</td></tr>
+</tbody></table></div>
+<script type="text/plain" class="code" data-file="index.html">
+<img src="images/profile.jpg" alt="A portrait photo of the site owner" width="160" height="160">
+</script>
+<script type="text/plain" class="code" data-file="static/styles.css">
+img { max-width: 100%; height: auto; border-radius: 8px; }
+</script>
+<p><strong>How to add your own image:</strong> save the file in the <code>images/</code> folder using lowercase letters and no spaces (e.g. <code>profile.jpg</code>), then point <code>src</code> at it with a relative path. If the image is decorative only, use <code>alt=""</code>; otherwise describe what it shows.</p>
+</div>
+<div class="do"><h3>Do</h3>
+<label><input type="checkbox"> Add one <code>&lt;img&gt;</code> with a relative <code>src</code>, descriptive <code>alt</code>, and both <code>width</code> and <code>height</code>.</label>
+<label><input type="checkbox"> Add <code>img { max-width: 100%; height: auto; }</code> to <code>styles.css</code>.</label>
+<label><input type="checkbox"> Rename any image file so it is lowercase with no spaces, and update the <code>src</code> to match.</label>
+</div>
+<div class="test"><h3>Test</h3>
+<button class="go" type="button" data-step="5">Test this step</button>
+<p class="sum" role="status"></p><ul class="res"></ul>
+</div>
+<div class="correct"><h3>Correct</h3>
+<p class="correctMsg">Run the test first. Failed items and the exact fix will appear here.</p>
+</div>
+</section>
+
+<section class="step" id="s6">
+<h2><span>6</span>Add a table, for the right reason</h2>
+<div class="learn">
+<h3>Learn</h3>
+<p>Use a table only when data genuinely has rows and columns. Never use one for page layout: that is CSS’s job. Tables give screen readers a way to announce “column: Years” as they move through cells.</p>
+<script type="text/plain" class="code" data-file="index.html">
+<table>
+  <caption>My education</caption>
+  <thead>
+    <tr>
+      <th scope="col">Institution</th>
+      <th scope="col">Qualification</th>
+      <th scope="col">Years</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Your University</th>
+      <td>Your Degree Title</td>
+      <td>2025-2028</td>
+    </tr>
+  </tbody>
+</table>
+</script>
+</div>
+<div class="do"><h3>Do</h3>
+<label><input type="checkbox"> In your Education section, build a table with columns Institution, Qualification and Years.</label>
+<label><input type="checkbox"> Add a <code>&lt;caption&gt;</code>, a <code>&lt;thead&gt;</code>, a <code>&lt;tbody&gt;</code>, and <code>scope</code> on every <code>&lt;th&gt;</code>.</label>
+<label><input type="checkbox"> Do not add <code>border="1"</code>. Draw borders in CSS.</label>
+</div>
+<div class="test"><h3>Test</h3>
+<button class="go" type="button" data-step="6">Test this step</button>
+<p class="sum" role="status"></p><ul class="res"></ul>
+</div>
+<div class="correct"><h3>Correct</h3>
+<p class="correctMsg">Run the test first. Failed items and the exact fix will appear here.</p>
+</div>
+</section>
+
+<section class="step" id="s7">
+<h2><span>7</span>CSS foundations: variables and a reset</h2>
+<div class="learn">
+<h3>Learn</h3>
+<p>Put every colour and font in <code>:root</code> variables so changing your theme means editing one line. Keep CSS in an external stylesheet, not inline <code>style=""</code> attributes.</p>
+<script type="text/plain" class="code" data-file="static/styles.css">
+:root {
+  --bg: #f7f8fc;
+  --ink: #16203a;
+  --accent: #4538d8;
+  --font-body: "Source Sans 3", system-ui, sans-serif;
+  --font-head: Georgia, serif;
+}
+*, *::before, *::after { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--bg);
+}
+h1, h2, h3 { font-family: var(--font-head); }
+</script>
+</div>
+<div class="do"><h3>Do</h3>
+<label><input type="checkbox"> Pick two colours and two fonts. Check the text/background pair has a contrast ratio of at least 4.5:1.</label>
+<label><input type="checkbox"> In <code>styles.css</code> declare them as variables on <code>:root</code>, then use them with <code>var(--name)</code>.</label>
+<label><input type="checkbox"> Add a small reset and base styles for <code>body</code>.</label>
+</div>
+<div class="test"><h3>Test</h3>
+<button class="go" type="button" data-step="7">Test this step</button>
+<p class="sum" role="status"></p><ul class="res"></ul>
+</div>
+<div class="correct"><h3>Correct</h3>
+<p class="correctMsg">Run the test first. Failed items and the exact fix will appear here.</p>
+</div>
+</section>
+
+<section class="step" id="s8">
+<h2><span>8</span>Contextual styling</h2>
+<div class="learn">
+<h3>Learn</h3>
+<p>Contextual styling means choosing elements by <em>where they sit</em>, not by giving each one a class. A <code>&lt;li&gt;</code> inside the nav can look different from a <code>&lt;li&gt;</code> in Skills with zero extra HTML.</p>
+<script type="text/plain" class="code" data-file="static/styles.css">
+main { max-width: 46rem; margin: 0 auto; padding: 1rem; }
+nav > ul { display: flex; gap: 1rem; list-style: none; padding: 0; }
+nav a { text-decoration: none; font-weight: 600; }
+main a { color: var(--accent); text-decoration: underline; }
+h2 + p { font-size: 1.15rem; color: #55607a; }
+section + section { border-top: 1px solid #dde1ee; padding-top: 1.5rem; }
+th[scope="row"] { font-weight: 700; }
+</script>
+<div class="bug"><b>Spot the bug.</b> <code>:contains()</code> is jQuery, not CSS. Browsers throw the whole rule away silently. Use an <code>id</code> instead.</div>
+</div>
+<div class="do"><h3>Do</h3>
+<label><input type="checkbox"> <code>main</code> gets a max-width and is centred.</label>
+<label><input type="checkbox"> Links inside <code>nav</code> look different from links inside <code>main</code>.</label>
+<label><input type="checkbox"> The first paragraph after each <code>h2</code> is slightly larger (use <code>h2 + p</code>).</label>
+<label><input type="checkbox"> Every section after the first gets a top border (use <code>section + section</code>).</label>
+<label><input type="checkbox"> Table cells and headers get borders and padding; <code>th[scope="row"]</code> gets bold.</label>
+<label><input type="checkbox"> Above each rule write a comment: <code>/* I used ___ because ___ */</code></label>
+</div>
+<div class="test"><h3>Test</h3>
+<button class="go" type="button" data-step="8">Test this step</button>
+<p class="sum" role="status"></p><ul class="res"></ul>
+</div>
+<div class="correct"><h3>Correct</h3>
+<p class="correctMsg">Run the test first. Failed items and the exact fix will appear here.</p>
+</div>
+</section>
+
+<section class="step" id="s9">
+<h2><span>9</span>Effects and responsive design</h2>
+<div class="learn">
+<h3>Learn</h3>
+<p>Effects should show the user that something is interactive. Responsive design means the layout adapts to the screen. Write the mobile layout first, then add real media queries as the screen grows.</p>
+<script type="text/plain" class="code" data-file="static/styles.css">
+a { color: var(--accent); transition: color .2s ease; }
+a:hover { color: #1b1470; }
+a:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+img { max-width: 100%; height: auto; }
+nav > ul { display: block; }
+@media (min-width: 48em) { nav > ul { display: flex; gap: 1.5rem; } }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</script>
+</div>
+<div class="do"><h3>Do</h3>
+<label><input type="checkbox"> Add a <code>transition</code> and a <code>:hover</code> state to your links, and a visible <code>:focus-visible</code> outline.</label>
+<label><input type="checkbox"> Add a hover background to table rows.</label>
+<label><input type="checkbox"> Write a <code>min-width</code> media query that turns your nav from a stacked list into a row.</label>
+<label><input type="checkbox"> Shrink your browser window. Where does it break? Add a media query to fix it.</label>
+</div>
+<div class="test"><h3>Test</h3>
+<button class="go" type="button" data-step="9">Test this step</button>
+<p class="sum" role="status"></p><ul class="res"></ul>
+</div>
+<div class="correct"><h3>Correct</h3>
+<p class="correctMsg">Run the test first. Failed items and the exact fix will appear here.</p>
+</div>
+</section>
+
+<section class="step" id="s10">
+<h2><span>10</span>Your 750-word commentary</h2>
+<div class="learn">
+<h3>Learn</h3>
+<p>Markers reward <em>why</em>, not <em>what</em>. Think of the commentary as a map of your decisions.</p>
+<div class="scroll"><table>
+<caption>Suggested word budget</caption>
+<thead><tr><th scope="col">Part</th><th scope="col">About</th><th scope="col">Cover</th></tr></thead>
+<tbody>
+<tr><th scope="row">Introduction</th><td>75</td><td>Purpose, audience, what you built</td></tr>
+<tr><th scope="row">Design and planning</th><td>175</td><td>Colour, type, layout, folder structure, and the reasons for each</td></tr>
+<tr><th scope="row">Technical implementation</th><td>300</td><td>Semantic HTML, table, contextual selectors, variables, responsiveness</td></tr>
+<tr><th scope="row">Challenges</th><td>125</td><td>What went wrong and how you fixed it</td></tr>
+<tr><th scope="row">Evaluation</th><td>75</td><td>What works, what you would change</td></tr>
+</tbody></table></div>
+<ol>
+<li><strong>Gather evidence.</strong> Write one sentence for: folder structure, semantic tag, table choice, CSS variable, contextual selector, media query, one challenge.</li>
+<li><strong>Introduction (~75 words).</strong> Purpose, audience, what you built.</li>
+<li><strong>Design and planning (~175 words).</strong> Every sentence must have a “because”.</li>
+<li><strong>Technical implementation (~300 words).</strong> Name specific elements and properties.</li>
+<li><strong>Challenges (~125 words).</strong> One real problem and your fix.</li>
+<li><strong>Evaluation (~75 words).</strong> What works, what you would change.</li>
+<li><strong>Attribution.</strong> Cite anything borrowed and say what you changed.</li>
+<li><strong>Check word count and “because” count.</strong> Aim for 650–850 words and at least 8 “because”.</li>
+</ol>
+</div>
+<div class="do"><h3>Do</h3>
+<label><input type="checkbox"> Write one “I used ___ because ___” sentence for each: folder structure, <code>&lt;em&gt;</code>/<code>&lt;strong&gt;</code>, table, <code>:root</code> variables, one contextual selector, one media query.</label>
+<label><input type="checkbox"> Write one challenge you hit and how you solved it.</label>
+<label><input type="checkbox"> Check the total is near 750 words and every borrowed thing is credited.</label>
+</div>
+<div class="test"><h3>Test</h3>
+<label for="lw">Paste your commentary</label>
+<textarea id="lw" rows="6"></textarea>
+<button class="go" type="button" data-step="10">Test this step</button>
+<p class="sum" role="status"></p><ul class="res"></ul>
+</div>
+<div class="correct"><h3>Correct</h3>
+<p class="correctMsg">Run the test first. Failed items and the exact fix will appear here.</p>
+</div>
+</section>
+
+<section class="step" id="deploy">
+<h2><span>↗</span>Deploy to the UCL server</h2>
+<div class="learn">
+<h3>Learn</h3>
+<p>Your site is built and validated locally. Now you need to put it on a server so a marker can see it. UCL uses different hosting systems depending on your department. This guide covers the most common scenario for a hand-coded static site: your personal web space.</p>
+</div>
+<div class="do"><h3>Do</h3>
+<ol>
+<li>Go to <code>https://my.desktop.ucl.ac.uk/</code> and log in with your UCL credentials. Install Citrix Receiver if prompted.</li>
+<li>On the UCL Desktop, open <strong>Start → All Programs → Utilities → Mount Unix Filestore (T-drive)</strong>.</li>
+<li>Open the <code>T:</code> drive. Look for a folder called <code>html.pub</code>. If it does not exist, create it.</li>
+<li>Copy your entire <code>cv-site</code> folder (including <code>static/</code> and <code>images/</code>) into <code>html.pub</code>.</li>
+<li>Run <strong>Start → All Programs → Utilities → Publish Web Pages</strong> and point it at <code>html.pub</code> to make files publicly readable.</li>
+<li>Open <code>http://www.homepages.ucl.ac.uk/~youruserid/cv-site/index.html</code> in a private window.</li>
+</ol>
+<div class="bug"><b>If your course uses Silva CMS instead:</b> log in via the grey cross at the bottom-right of the page, then upload files through the Contents screen. Ask your tutor which system your department uses.</div>
+</div>
+<div class="test"><h3>Test</h3>
+<button class="go" type="button" data-step="deploy">Test this step</button>
+<p class="sum" role="status"></p><ul class="res"></ul>
+</div>
+<div class="correct"><h3>Correct</h3>
+<p class="correctMsg">Run the test first. Failed items and the exact fix will appear here.</p>
+</div>
+</section>
+
+<section class="step" id="lab">
+<h2>Final check: the whole project</h2>
+<div class="learn">
+<h3>Learn</h3>
+<p>Once every step passes, run this broader check on your finished files. It re-tests everything a marker would look for and suggests quality improvements with links to learn more.</p>
+</div>
+<div class="test"><h3>Test</h3>
+<p><button class="go" type="button" id="lgo">Check my work</button></p>
+<p id="lsum" role="status"></p><ul class="res" id="lres"></ul>
+<div id="quality"></div>
+</div>
+<div class="correct"><h3>Correct</h3>
+<p class="correctMsg">Fix the failed items first. Then read the quality suggestions and follow the “Learn more” links. Re-run the check until every item passes.</p>
+</div>
+</section>
+</main>
+</div>
+
+<aside id="ws" aria-label="Your project">
+<div class="wsbar"><button class="go" id="wst" type="button" aria-expanded="false" aria-controls="wsb">Open my project</button><span>Type or paste your files here to preview and check them.</span></div>
+<div class="wsbody" id="wsb">
+<div class="tabs"><button type="button" data-t="lh" aria-selected="true">index.html</button><button type="button" data-t="lc" aria-selected="false">static/styles.css</button><button type="button" data-t="lj" aria-selected="false">static/script.js</button><button type="button" data-t="lpv" aria-selected="false">Preview</button></div>
+<textarea id="lh" spellcheck="false" aria-label="index.html" placeholder="Your index.html"></textarea>
+<textarea id="lc" spellcheck="false" aria-label="static/styles.css" placeholder="Your static/styles.css" hidden></textarea>
+<textarea id="lj" spellcheck="false" aria-label="static/script.js" placeholder="Your static/script.js" hidden></textarea>
+<iframe class="pv" id="lpv" title="Preview of your CV page" sandbox hidden></iframe>
+</div></aside>
+<script src="script.js" defer></script>
+</body>
+</html>
